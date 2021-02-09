@@ -106,7 +106,22 @@ public class MySinglyLinkedList implements SinglyLinkedListADT {
 
     @Override
     public int removeFirst() {
-        int response
+        int response = 0;
+        //empty
+        if(!isEmpty()) {
+            response = head.getData();
+            //single node
+            if(head == tail){
+                head = null;
+                tail = null;
+            }
+            //multiple node
+            else{
+                head = head.getNext();
+            }
+            size--;
+        }
+        return response;
     }
 
     @Override
