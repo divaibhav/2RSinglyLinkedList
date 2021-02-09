@@ -176,7 +176,28 @@ public class MySinglyLinkedList implements SinglyLinkedListADT {
 
     @Override
     public void addAfterGivenNode(int givenElement, int element) {
-
+        Node node = new Node(element);
+        if(!isEmpty()){
+            Node temp = head;
+            while (temp != null){
+                if(temp.getData() == givenElement){
+                    break;
+                }
+                temp =temp.getNext();
+            }
+            if(temp != null){
+                //if given element is last element of list
+                if(temp == tail){
+                    temp.setNext(node);
+                    tail = node;
+                }
+                else{
+                    node.setNext(temp.getNext());
+                    temp.setNext(node);
+                }
+                size++;
+            }
+        }
     }
 
     @Override
