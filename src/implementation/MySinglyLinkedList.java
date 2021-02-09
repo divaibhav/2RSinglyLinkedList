@@ -67,11 +67,60 @@ public class MySinglyLinkedList implements SinglyLinkedListADT {
 
     @Override
     public int size() {
-        return 0;
+        return size;
     }
 
     @Override
     public void traverse() {
+        if(!isEmpty()){
+            Node temp = head;
+            while(temp != null){
+                System.out.print(temp.getData() + "-->");
+                temp = temp.getNext();
+            }
+            System.out.println("null");
+        }
 
+    }
+
+    @Override
+    //returning first element without removing it
+    public int first() {
+        int response = 0;//considering 0 as invalid data
+        if(!isEmpty()){
+            response = head.getData();
+        }
+
+        return response;
+    }
+
+    @Override
+    //returning last element without removing it
+    public int last() {
+        int response = 0;
+        if(!isEmpty()){
+            response = tail.getData();
+        }
+        return response;
+    }
+
+    @Override
+    public int removeFirst() {
+        int response
+    }
+
+    @Override
+    public int removeLast() {
+        return 0;
+    }
+
+    @Override
+    public void addAfterGivenNode(int givenElement, int element) {
+
+    }
+
+    @Override
+    public int removeGivenNode(int givenElement) {
+        return 0;
     }
 }
