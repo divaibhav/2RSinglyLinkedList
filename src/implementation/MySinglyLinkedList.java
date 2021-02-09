@@ -151,6 +151,28 @@ public class MySinglyLinkedList implements SinglyLinkedListADT {
         }
         return response;
     }
+    public int removeLastUsingSingleReference(){
+        int response = 0;
+        if(!isEmpty()){
+            //response = tail.getData();
+            if(head == tail){
+                response = tail.getData();
+                head = null;
+                tail = null;
+            }
+            else{
+                Node temp = head;
+                while ((temp.getNext()).getNext() != null){
+                    temp = temp.getNext();
+                }
+                response = temp.getNext().getData();
+                temp.setNext(null);
+                tail = temp;
+            }
+            size--;
+        }
+        return response;
+    }
 
     @Override
     public void addAfterGivenNode(int givenElement, int element) {
