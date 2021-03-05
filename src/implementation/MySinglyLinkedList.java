@@ -199,9 +199,25 @@ public class MySinglyLinkedList implements SinglyLinkedListADT {
             }
         }
     }
+    public void addBeforeGivenNode(int givenElement, int element){
+        
+    }
 
     @Override
     public int removeGivenNode(int givenElement) {
         return 0;
+    }
+    public void recursiveTraverse(Node node){
+        if(node == null){
+            return;
+        }
+        else {
+            recursiveTraverse(node.getNext());
+            System.out.print(node.getData());
+        }
+    }
+
+    public Node getHead() {
+        return head;
     }
 }
